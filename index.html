@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+<head>
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+ 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  
+	<script src="/node_modules/readmore-js/readmore.min.js"></script>
+
+	<script type="text/javascript" src="scripts.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body ng-controller="movieController">
+
+<div layout="row" layout-align="center">
+	<md-input-container>
+		<label>Search</label>
+			<input class="search-box" type="text" ng-model="searchTerm" ng-change="userSearch(searchTerm); searchUsed = true">
+	</md-input-container>
+</div>
+
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Now Playing">
+        <md-content>
+         
+<!-- 	        <div layout="row"> -->
+	        	<div layout="column" layout-gt-sm="row" style="overflow:hidden" layout-wrap>
+
+	        			<div flex  ng-click="moreInfo($event, npArray[0])" class="backdrop-wrapper" >
+	        				<h2 class="movie-title">{{npArray[0].title}}</h2>
+	        				<img ng-src="{{imagePath}}{{npArray[0].backdrop_path}}">
+	        			</div>
+ 
+						<div  flex  ng-click="moreInfo($event, npArray[1])" class="backdrop-wrapper">
+							<h4 class="movie-title">{{npArray[1].title}}</h4>
+							<img ng-src="{{imagePath}}{{npArray[1].backdrop_path}}">
+						</div>
+
+						<div    flex ng-click="moreInfo($event, npArray[2])" class="backdrop-wrapper" >
+							<h4 class="movie-title">{{npArray[2].title}}</h4>
+							<img ng-src="{{imagePath}}{{npArray[2].backdrop_path}}">
+						</div>
+
+
+
+						<!-- flex-sm="100" flex-gt-sm="45" -->
+
+	        	</div>
+				
+<!-- 				<div layout="column" flex="50" >
+        			<div layout="row">
+						<div layout="column" ng-click="moreInfo($event, npArray[3])" class="backdrop-wrapper" flex="100">
+							<img ng-src="{{imagePath}}{{npArray[3].backdrop_path}}">
+						</div>
+						<div layout="column" ng-click="moreInfo($event, npArray[4])" class="backdrop-wrapper" flex="100">
+							<img ng-src="{{imagePath}}{{npArray[4].backdrop_path}}">
+						</div>
+        			</div>
+
+
+    				<div layout="row">
+	        			<div layout="column" ng-click="moreInfo($event, npArray[4])" class="backdrop-wrapper" flex="100">
+	        				<img ng-src="{{imagePath}}{{npArray[5].backdrop_path}}">
+	        			</div>
+        			</div>
+	        	</div>
+        	</div>  --> 
+
+
+
+        </md-content>
+      </md-tab>
+      <md-tab label="Most Popular">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Most Popular</h1>
+
+        </md-content>
+      </md-tab>
+      <md-tab label="Highest Rated">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Highest Rated</h1>
+
+        </md-content>
+      </md-tab>
+
+      </md-tab>
+      <md-tab md-active="searchUsed" label="Search">
+        <md-content class="md-padding">
+          	<md-content class="md-padding" layout-xs="column" layout-wrap layout="row">
+			    <div ng-repeat="movie in movieArray" flex-xs flex-gt-xs="25" flex-gt-md="20" ng-show="movie.poster_path.length" layout="column">
+			        <md-card ng-click="moreInfo($event, movie)">
+			            <img ng-src="{{imagePath}}{{movie.poster_path}}" class="md-card-image" alt="movieposter">
+			            <md-card-title>
+			                <md-card-title-text>
+			                    <span class="md-headline">{{movie.title}}</span>
+			                </md-card-title-text>
+			            </md-card-title>
+			        </md-card>
+			    </div>
+			</md-content>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>
+
+
+
+<md-dialog>
+
+</md-dialog>
+
+
+</body>
+</html>
+
+
+
+
