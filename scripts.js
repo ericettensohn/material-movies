@@ -5,6 +5,7 @@ movieApp.controller('movieController', function($scope, $http, $mdDialog, $mdMed
 	$scope.searchUsed = false;
 
 	getNowPlaying();
+	getMostPopular();
 
     $scope.userSearch = function(searchTerm) {
 		var movieURL = 'https://api.themoviedb.org/3/search/movie?api_key=fec8b5ab27b292a68294261bb21b04a5&query=' + searchTerm;
@@ -23,7 +24,7 @@ movieApp.controller('movieController', function($scope, $http, $mdDialog, $mdMed
 
    	function getNowPlaying() {
     	var npUrl = 'http://api.themoviedb.org/3/movie/now_playing?api_key=fec8b5ab27b292a68294261bb21b04a5'; 
-    	$scope.imagePath = 'http://image.tmdb.org/t/p/w1280/';
+    	$scope.npPath = 'http://image.tmdb.org/t/p/w1280/';
     	
     	$http({
     		method: 'GET',
@@ -35,6 +36,21 @@ movieApp.controller('movieController', function($scope, $http, $mdDialog, $mdMed
 
     	});
     }
+
+   	function getMostPopular() {
+    	var mpUrl = 'http://api.themoviedb.org/3/movie/popular?api_key=fec8b5ab27b292a68294261bb21b04a5'; 
+    	$scope.mpPath = 'http://image.tmdb.org/t/p/w1280/';
+    	
+    	$http({
+    		method: 'GET',
+    		url: mpUrl
+	   	}).then(function successFunction(mpData){
+	    	$scope.mpArray = mpData.data.results;
+	    }, function failureFunction(mpData){
+
+    	});
+    }
+
 
     $scope.getMeta = function(movie) {
     	var metaUrl = 
