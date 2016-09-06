@@ -79,3 +79,7 @@ img {
 .np-card-content {
 	padding: 0;
 }
+
+.search-result {
+	min-height: 440px;
+}
