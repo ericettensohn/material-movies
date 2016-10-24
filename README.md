@@ -3,6 +3,6 @@ This app uses The Movie Database (TMDb) API to serve up dynamically displayed an
 
 [Live Demo](http://ericettensohn.com/movies)
 
-[screen1](http://i.imgur.com/rMl8vpG.png)
+![screen1](http://i.imgur.com/rMl8vpG.png)
 
-[screen2](http://i.imgur.com/xrdKX4F.png)
+![screen2](http://i.imgur.com/xrdKX4F.png)
