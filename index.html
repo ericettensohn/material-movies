@@ -41,17 +41,17 @@
         <md-content layout="column" layout-gt-sm="row" >
       
 	        	<div layout="column" layout-gt-sm="row"  flex-gt-sm="50" style="overflow:hidden" layout-wrap>
-        			<div flex flex-gt-sm="100" ng-click="moreInfo($event, npArray[0])" class="backdrop-wrapper" >
+        			<div flex flex-gt-sm="100" class="backdrop-wrapper" >
         				<h2 class="movie-title">{{npArray[0].title}}</h2>
         				<img ng-src="{{npPath}}{{npArray[0].backdrop_path}}">
         			</div>
 
-					<div flex flex-gt-sm="50" ng-click="moreInfo($event, npArray[1])" class="backdrop-wrapper">
+					<div flex flex-gt-sm="50" class="backdrop-wrapper">
 						<h2 class="movie-title">{{npArray[1].title}}</h4>
 						<img ng-src="{{npPath}}{{npArray[1].backdrop_path}}">
 					</div>
 
-					<div flex flex-gt-sm="50" ng-click="moreInfo($event, npArray[2])" class="backdrop-wrapper" >
+					<div flex flex-gt-sm="50" class="backdrop-wrapper" >
 						<h2 class="movie-title">{{npArray[2].title}}</h4>
 						<img ng-src="{{npPath}}{{npArray[2].backdrop_path}}">
 					</div>
@@ -59,17 +59,17 @@
 
 	        	<div layout="column" layout-gt-sm="row" flex-gt-sm="50" style="overflow:hidden" layout-wrap>
 
-	    			<div flex flex-gt-sm="50" ng-click="moreInfo($event, npArray[3])" class="backdrop-wrapper" >
+	    			<div flex flex-gt-sm="50" class="backdrop-wrapper" >
 	    				<h2 class="movie-title">{{npArray[3].title}}</h2>
 	    				<img ng-src="{{npPath}}{{npArray[3].backdrop_path}}">
 	    			</div>
 
-					<div  flex flex-gt-sm="50" ng-click="moreInfo($event, npArray[4])" class="backdrop-wrapper">
+					<div  flex flex-gt-sm="50" class="backdrop-wrapper">
 						<h2 class="movie-title">{{npArray[4].title}}</h4>
 						<img ng-src="{{npPath}}{{npArray[4].backdrop_path}}">
 					</div>
 
-					<div flex flex-gt-sm="100" ng-click="moreInfo($event, npArray[5])" class="backdrop-wrapper" >
+					<div flex flex-gt-sm="100" class="backdrop-wrapper" >
 						<h2 class="movie-title">{{npArray[5].title}}</h4>
 						<img ng-src="{{npPath}}{{npArray[5].backdrop_path}}">
 					</div>
@@ -80,17 +80,17 @@
         <md-content layout="column" layout-gt-sm="row" >
       
 	        	<div layout="column" layout-gt-sm="row"  flex-gt-sm="50" style="overflow:hidden" layout-wrap>
-        			<div flex flex-gt-sm="100" ng-click="moreInfo($event, mpArray[0])" class="backdrop-wrapper" >
+        			<div flex flex-gt-sm="100" class="backdrop-wrapper" >
         				<h2 class="movie-title">{{mpArray[0].title}}</h2>
         				<img ng-src="{{mpPath}}{{mpArray[0].backdrop_path}}">
         			</div>
 
-					<div flex flex-gt-sm="50" ng-click="moreInfo($event, mpArray[1])" class="backdrop-wrapper">
+					<div flex flex-gt-sm="50" class="backdrop-wrapper">
 						<h2 class="movie-title">{{mpArray[1].title}}</h4>
 						<img ng-src="{{mpPath}}{{mpArray[1].backdrop_path}}">
 					</div>
 
-					<div flex flex-gt-sm="50" ng-click="moreInfo($event, mpArray[2])" class="backdrop-wrapper" >
+					<div flex flex-gt-sm="50" class="backdrop-wrapper" >
 						<h2 class="movie-title">{{mpArray[2].title}}</h4>
 						<img ng-src="{{mpPath}}{{mpArray[2].backdrop_path}}">
 					</div>
@@ -98,31 +98,24 @@
 
 	        	<div layout="column" layout-gt-sm="row" flex-gt-sm="50" style="overflow:hidden" layout-wrap>
 
-	    			<div flex flex-gt-sm="50" ng-click="moreInfo($event, mpArray[3])" class="backdrop-wrapper" >
+	    			<div flex flex-gt-sm="50" class="backdrop-wrapper" >
 	    				<h2 class="movie-title">{{mpArray[3].title}}</h2>
 	    				<img ng-src="{{mpPath}}{{mpArray[3].backdrop_path}}">
 	    			</div>
 
-					<div  flex flex-gt-sm="50" ng-click="moreInfo($event, mpArray[4])" class="backdrop-wrapper">
+					<div  flex flex-gt-sm="50" class="backdrop-wrapper">
 						<h2 class="movie-title">{{mpArray[4].title}}</h4>
 						<img ng-src="{{mpPath}}{{mpArray[4].backdrop_path}}">
 					</div>
 
-					<div flex flex-gt-sm="100" ng-click="moreInfo($event, mpArray[5])" class="backdrop-wrapper" >
+					<div flex flex-gt-sm="100" class="backdrop-wrapper" >
 						<h2 class="movie-title">{{mpArray[5].title}}</h4>
 						<img ng-src="{{mpPath}}{{mpArray[5].backdrop_path}}">
 					</div>
 	        	</div>
         </md-content>
       </md-tab>
-      <md-tab label="Highest Rated" ng-click="searchUsed = false">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Highest Rated</h1>
-
-        </md-content>
-      </md-tab>
-
-      </md-tab>
+     
       <md-tab md-active="searchUsed" label="Search">
 <!--       <md-tab  label="Search"> -->
         <md-content class="md-padding">
